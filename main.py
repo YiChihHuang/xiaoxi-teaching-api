@@ -20,7 +20,7 @@ OUTPUT_DIR = Path("outputs")
 OUTPUT_DIR.mkdir(exist_ok=True)
 
 PORT = int(os.environ.get("PORT", 8000))
-BASE_URL = os.environ.get("BASE_URL", f"http://localhost:{PORT}")
+BASE_URL = os.environ.get("RENDER_EXTERNAL_URL", os.environ.get("BASE_URL", f"http://localhost:{PORT}"))
 
 class GenerateRequest(BaseModel):
     request_id: str
